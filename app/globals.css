@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #0066cc;
+    --secondary: #ffffff;
+    --accent: #ffd700;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+  
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply px-6 py-2 bg-primary text-white rounded-md hover:opacity-90 transition-all duration-300;
+  }
+
+  .service-card {
+    @apply p-6 rounded-lg glass-effect hover:border-accent hover:border-2 transition-all duration-300;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6 text-gray-900;
+  }
+
+  .fade-in {
+    @apply animate-[fadeIn_0.5s_ease-in-out];
+  }
+
+  .slide-up {
+    @apply animate-[slideUp_0.5s_ease-in-out];
+  }
+
+  .fade-up-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-up-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mega-title {
+    @apply text-5xl md:text-7xl font-bold;
+  }
+
+  .cta-button {
+    @apply text-xl px-10 py-4 inline-block hover:scale-105;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+} 
