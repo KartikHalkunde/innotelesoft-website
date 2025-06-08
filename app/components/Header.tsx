@@ -57,31 +57,9 @@ export default function Header() {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-white hover:text-[#FFB300] transition-colors">
-              Home
-            </Link>
-            <Link href="/about" className="text-white hover:text-[#FFB300] transition-colors">
-              About Us
-            </Link>
-            <Link href="/services" className="text-white hover:text-[#FFB300] transition-colors">
-              Services
-            </Link>
-            <Link href="/contact" className="text-white hover:text-[#FFB300] transition-colors">
-              Contact
-            </Link>
-            <Link
-              href="/contact"
-              className="bg-[#FFB300] text-black px-6 py-2 rounded-full hover:bg-[#E5A05C] transition-all duration-300"
-            >
-              Get in Touch
-            </Link>
-          </nav>
-
-          {/* Mobile Menu Button */}
+          {/* Menu Button */}
           <button
-            className="md:hidden text-white p-2 z-50"
+            className="text-white p-2 z-50"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
           >
@@ -99,7 +77,7 @@ export default function Header() {
               </svg>
             ) : (
               <svg
-                className="w-8 h-8"
+                className="w-6 h-6"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -112,105 +90,61 @@ export default function Header() {
             )}
           </button>
 
-          {/* Mobile Navigation Overlay */}
+          {/* Navigation Overlay */}
           <div 
-            className={`fixed inset-0 bg-black/50 backdrop-blur-sm md:hidden transition-opacity duration-300 ${
+            className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
               isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
             }`}
             onClick={() => setIsMenuOpen(false)}
           />
 
-          {/* Mobile Navigation Menu */}
+          {/* Navigation Menu (Slide-in from right) */}
           <div 
-            className={`fixed top-0 right-0 h-full w-full bg-[#0F1C30] md:hidden transform transition-transform duration-300 ease-in-out ${
+            className={`fixed top-0 right-0 h-full w-[300px] bg-[#0F1C30] transform transition-transform duration-300 ease-in-out ${
               isMenuOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
           >
-            <div className="flex justify-between items-center p-4 border-b border-gray-700">
-              <Link href="/" className="relative w-40 h-12" onClick={() => setIsMenuOpen(false)}>
-                <Image
-                  src="/images/logo.png"
-                  alt="InnoTelesoft"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </Link>
-              <button
+            <div className="flex flex-col h-full pt-20 pb-6 px-6">
+              <nav className="flex-1">
+                <div className="space-y-6">
+                  <Link
+                    href="/"
+                    className="block text-lg text-white hover:text-[#FFB300] transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="block text-lg text-white hover:text-[#FFB300] transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    About Us
+                  </Link>
+                  <Link
+                    href="/services"
+                    className="block text-lg text-white hover:text-[#FFB300] transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Services
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="block text-lg text-white hover:text-[#FFB300] transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Contact
+                  </Link>
+                </div>
+              </nav>
+              <Link
+                href="/contact"
+                className="bg-[#FFB300] text-black px-6 py-3 rounded-full hover:bg-[#E5A05C] transition-all duration-300 text-center text-lg font-medium"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-white p-2"
               >
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
+                Get in Touch
+              </Link>
             </div>
-            <nav className="p-6">
-              <div className="space-y-6">
-                <Link
-                  href="/about"
-                  className="flex justify-between items-center text-xl text-white hover:text-[#FFB300] transition-colors py-3"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About Us
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-                <Link
-                  href="/services"
-                  className="flex justify-between items-center text-xl text-white hover:text-[#FFB300] transition-colors py-3"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Services
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-                <Link
-                  href="/contact"
-                  className="flex justify-between items-center text-xl text-white hover:text-[#FFB300] transition-colors py-3"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Contact Us
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
-            </nav>
           </div>
         </div>
       </div>
