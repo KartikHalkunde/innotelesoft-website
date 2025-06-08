@@ -2,6 +2,7 @@
 
 import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 import Image from 'next/image'
+import CurveSection from '../components/CurveSection'
 
 export default function About() {
   useScrollAnimation()
@@ -22,11 +23,7 @@ export default function About() {
         </div>
 
         {/* Curved Bottom */}
-        <div className="absolute bottom-0 left-0 right-0 z-10">
-          <svg viewBox="0 0 1440 160" className="w-full h-auto fill-[#FAFAFA] dark:fill-[#1a1a1a] relative" preserveAspectRatio="none">
-            <path d="M0,160 C480,80 960,80 1440,160 L1440,160 L0,160 Z" />
-          </svg>
-        </div>
+        <CurveSection />
 
         <div className="container-custom relative z-10 text-white px-4 sm:px-6">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 fade-up-scroll">

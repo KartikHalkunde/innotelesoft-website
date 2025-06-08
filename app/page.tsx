@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { useState, useRef } from 'react'
 import Preloader from './components/Preloader'
+import CurveSection from './components/CurveSection'
 
 export default function Home() {
   useScrollAnimation()
@@ -36,37 +37,7 @@ export default function Home() {
         </div>
 
         {/* Curved Bottom */}
-        <div className="absolute bottom-0 left-0 right-0 z-10">
-          <svg viewBox="0 0 1440 160" className="w-full h-auto fill-[#FAFAFA] dark:fill-[#1a1a1a] relative" preserveAspectRatio="none">
-            <path d="M0,160 C480,80 960,80 1440,160 L1440,160 L0,160 Z" />
-          </svg>
-          
-          {/* Scroll Arrow Button */}
-          <button 
-            onClick={() => {
-              const curveEnd = document.querySelector('.curve-end');
-              curveEnd?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="absolute left-1/2 top-[calc(50%+20px)] -translate-x-1/2 -translate-y-1/2 transform z-20 bg-[#FFFFFF] rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shadow-lg transition-all duration-300 hover:bg-[#FFB300] group"
-            aria-label="Scroll Down"
-          >
-            <svg 
-              width="20" 
-              height="20" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              className="text-[#0F1C30] group-hover:text-white transition-colors duration-300 group-hover:animate-bounceArrow sm:w-6 sm:h-6"
-            >
-              <path 
-                d="M4.5 9L12 16.5L19.5 9" 
-                stroke="currentColor" 
-                strokeWidth="2.5" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
+        <CurveSection showScrollButton={true} />
 
         <div className="container-custom relative z-10 text-center px-4 sm:px-6">
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-6 sm:mb-8 fade-up-scroll">
