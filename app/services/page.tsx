@@ -75,7 +75,7 @@ export default function Services() {
 
         {/* Curved Bottom */}
         <div className="absolute bottom-0 left-0 right-0 z-10">
-          <svg viewBox="0 0 1440 160" className="w-full h-auto fill-[#FAFAFA] relative" preserveAspectRatio="none">
+          <svg viewBox="0 0 1440 160" className="w-full h-auto fill-[#FAFAFA] dark:fill-[#1a1a1a] relative" preserveAspectRatio="none">
             <path d="M0,160 C480,80 960,80 1440,160 L1440,160 L0,160 Z" />
           </svg>
         </div>
@@ -92,7 +92,7 @@ export default function Services() {
       <div className="curve-end-services"></div>
 
       {/* Services We Provide Section */}
-      <section className="bg-[#FAFAFA] pt-16 sm:pt-20 overflow-x-hidden">
+      <section className="bg-[#FAFAFA] pt-16 sm:pt-20">
         <div className="text-center mb-12 -mt-[66px]">
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-black fade-up-scroll px-4 sm:px-0">
             SERVICES WE PROVIDE<span className="text-[#FFB300]">.</span>
@@ -100,62 +100,61 @@ export default function Services() {
         </div>
         <div className="w-full max-w-none grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
           {/* Row 1: image, text, image, text */}
-          <div className="relative h-72 sm:h-96 group overflow-hidden">
+          <div className="relative h-96 group overflow-hidden">
             <Image src={services[0].image} alt={services[0].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
           </div>
-          <div className="flex flex-col justify-center bg-[#2993D1] text-white p-6 sm:p-8 min-h-[300px] sm:h-96">
-            <h3 className="text-xl sm:text-2xl font-bold mb-3">{services[0].title}</h3>
-            <p className="text-sm sm:text-base mb-0">{services[0].description}</p>
+          <div className="flex flex-col justify-center bg-[#2993D1] text-white p-8 h-96">
+            <h3 className="text-2xl font-bold mb-3">{services[0].title}</h3>
+            <p className="text-base mb-0">{services[0].description}</p>
           </div>
-          <div className="relative h-72 sm:h-96 group overflow-hidden">
+          <div className="relative h-96 group overflow-hidden">
             <Image src={services[1].image} alt={services[1].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
           </div>
-          <div className="flex flex-col justify-center bg-[#8B8CC7] text-white p-6 sm:p-8 min-h-[300px] sm:h-96">
-            <h3 className="text-xl sm:text-2xl font-bold mb-3">{services[1].title}</h3>
-            <p className="text-sm sm:text-base mb-0">{services[1].description}</p>
+          <div className="flex flex-col justify-center bg-[#8B8CC7] text-white p-8 h-96">
+            <h3 className="text-2xl font-bold mb-3">{services[1].title}</h3>
+            <p className="text-base mb-0">{services[1].description}</p>
           </div>
           {/* Row 2: text, image, text, image */}
-          <div className="flex flex-col justify-center bg-[#36A9C5] text-white p-6 sm:p-8 min-h-[300px] sm:h-96">
-            <h3 className="text-xl sm:text-2xl font-bold mb-3">{services[2].title}</h3>
-            <p className="text-sm sm:text-base mb-0">{services[2].description}</p>
+          <div className="flex flex-col justify-center bg-[#36A9C5] text-white p-8 h-96">
+            <h3 className="text-2xl font-bold mb-3">{services[2].title}</h3>
+            <p className="text-base mb-0">{services[2].description}</p>
           </div>
-          <div className="relative h-72 sm:h-96 group overflow-hidden">
+          <div className="relative h-96 group overflow-hidden">
             <Image src={services[2].image} alt={services[2].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
           </div>
-          <div className="flex flex-col justify-center bg-[#DA8637] text-white p-6 sm:p-8 min-h-[300px] sm:h-96">
-            <h3 className="text-xl sm:text-2xl font-bold mb-3">{services[3].title}</h3>
-            <p className="text-sm sm:text-base mb-0">{services[3].description}</p>
+          <div className="flex flex-col justify-center bg-[#DA8637] text-white p-8 h-96">
+            <h3 className="text-2xl font-bold mb-3">{services[3].title}</h3>
+            <p className="text-base mb-0">{services[3].description}</p>
           </div>
-          <div className="relative h-72 sm:h-96 group overflow-hidden">
+          <div className="relative h-96 group overflow-hidden">
             <Image src={services[3].image} alt={services[3].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
           </div>
           {/* Row 3: image, text, image, text */}
-          <div className="relative h-72 sm:h-96 group overflow-hidden">
+          <div className="relative h-96 group overflow-hidden">
             <Image src={services[4].image} alt={services[4].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
           </div>
-          <div className="flex flex-col justify-center bg-[#18B6A4] text-white p-6 sm:p-8 min-h-[300px] sm:h-96">
-            <h3 className="text-xl sm:text-2xl font-bold mb-3">{services[4].title}</h3>
-            <p className="text-sm sm:text-base mb-0">{services[4].description}</p>
+          <div className="flex flex-col justify-center bg-[#18B6A4] text-white p-8 h-96">
+            <h3 className="text-2xl font-bold mb-3">{services[4].title}</h3>
+            <p className="text-base mb-0">{services[4].description}</p>
           </div>
-          <div className="relative h-72 sm:h-96 group overflow-hidden">
+          <div className="relative h-96 group overflow-hidden">
             <Image src={services[5].image} alt={services[5].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
           </div>
-          <div className="flex flex-col justify-center bg-[#1B6AA8] text-white p-6 sm:p-8 min-h-[300px] sm:h-96">
-            <h3 className="text-xl sm:text-2xl font-bold mb-3">{services[5].title}</h3>
-            <p className="text-sm sm:text-base mb-0">{services[5].description}</p>
+          <div className="flex flex-col justify-center bg-[#1B6AA8] text-white p-8 h-96">
+            <h3 className="text-2xl font-bold mb-3">{services[5].title}</h3>
+            <p className="text-base mb-0">{services[5].description}</p>
           </div>
         </div>
       </section>
 
       {/* Why Choose Innotelesoft Services Section */}
       <section className="relative min-h-[600px] sm:min-h-[700px] flex items-center overflow-hidden group py-16 sm:py-24">
-        {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src="/images/services/partnership.jpg"
@@ -164,7 +163,6 @@ export default function Services() {
             className="object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
             priority
           />
-          {/* Blended Dark Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-transparent" />
         </div>
 
