@@ -10,10 +10,10 @@ export default function Contact() {
       <div className="container-custom max-w-4xl mx-auto">
         <div className="text-center mb-16 fade-up-scroll">
           <h1 className="text-4xl md:text-5xl font-bold text-[#0F1C30] mb-6">
-            Every day, Innotelesoft leverages AI-infused technologies
+            Every day, Innotelesoft empowers Buisnesses
           </h1>
           <p className="text-xl text-[#0F1C30]/80 max-w-3xl mx-auto">
-            to empower clients around the globe to build a more resilient, secure and sustainable future.
+            to build a more resilient, secure and sustainable future.
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export default function Contact() {
           <div className="text-center fade-up-scroll">
             <button
               type="submit"
-              className="px-12 py-4 bg-[#0F1C30] text-white rounded-lg hover:bg-[#0F1C30]/90 transition-all duration-300 text-lg font-medium"
+              className="px-12 py-4 bg-[#0F1C30] text-white rounded-full hover:bg-[#0F1C30]/90 transition-all duration-300 text-lg font-medium"
             >
               Submit
             </button>

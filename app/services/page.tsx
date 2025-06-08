@@ -1,39 +1,39 @@
 'use client'
 
+import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 
 const services = [
   {
-    title: 'Software Solutions',
-    description: 'Custom software development and integration services',
-    icon: '💻'
+    title: 'OEM Equipment Supply',
+    description: 'At Innotelesoft Pvt. Ltd., we specialize in the reliable supply of high-quality OEM equipment sourced from leading global manufacturers. Our partnerships with trusted OEM brands ensure clients receive performance-driven hardware tailored to their project needs. We provide end-to-end support—from product selection and procurement to deployment—ensuring seamless integration and long-term operational efficiency.',
+    image: '/images/services/oem_equipment.jpg'
   },
   {
-    title: 'Infrastructure Setup',
-    description: 'Complete telecom infrastructure solutions',
-    icon: '🏗️'
+    title: 'Man Power Supply',
+    description: 'We provide skilled and project-ready technical manpower to support diverse operational needs across IT, telecom, and infrastructure domains. From short-term project staffing to long-term resource deployment, we offer flexible and scalable solutions that align with your timelines, budgets, and technical requirements—ensuring seamless execution and productivity across all stages.',
+    image: '/images/services/man_power.jpg'
   },
   {
     title: 'Technical Services',
-    description: 'Expert technical support and maintenance',
-    icon: '🔧'
+    description: 'We offer a wide range of technical services designed to support the full lifecycle of IT and telecom projects. Our expertise spans system integration, infrastructure setup, network deployment, and technical support. With a focus on precision, reliability, and compliance, we ensure smooth execution and optimal performance across all technical operations.',
+    image: '/images/services/technical_services.jpg'
   },
   {
     title: 'Project Management',
-    description: 'End-to-end project planning and execution',
-    icon: '📊'
+    description: 'We deliver end-to-end project management services that ensure timely, cost-effective, and quality-driven execution. From planning and resource allocation to implementation and monitoring, our experienced team ensures every project meets its goals with precision and transparency. We follow industry best practices to minimize risks and maximize efficiency across IT, telecom, and infrastructure domains.',
+    image: '/images/services/project_management.jpg'
   },
   {
     title: 'Security Solutions',
-    description: 'Comprehensive cybersecurity services',
-    icon: '🔒'
+    description: 'We provide comprehensive security solutions designed to protect critical infrastructure, data, and operations. Our offerings include surveillance systems, access control, cybersecurity measures, and integrated threat management. With a focus on reliability and compliance, we tailor each solution to meet the unique security needs of IT, telecom, and enterprise environments',
+    image: '/images/services/security_solutions.jpg'
   },
   {
-    title: 'Cloud Services',
-    description: 'Cloud migration and management',
-    icon: '☁️'
+    title: 'Installation and Commissioning',
+    description: 'We offers professional installation and commissioning services, ensuring that your equipment and systems are set up accurately and function flawlessly. We handle everything from precise assembly and configuration to thorough testing and calibration, guaranteeing optimal performance and reliability right from the start. Our skilled team ensures a smooth, hassle-free process tailored to your project needs.',
+    image: '/images/services/installation.jpg'
   }
 ]
 
@@ -72,6 +72,14 @@ export default function Services() {
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>
+
+        {/* Curved Bottom */}
+        <div className="absolute bottom-0 left-0 right-0 z-10">
+          <svg viewBox="0 0 1440 160" className="w-full h-auto fill-[#FAFAFA] relative" preserveAspectRatio="none">
+            <path d="M0,160 C480,80 960,80 1440,160 L1440,160 L0,160 Z" />
+          </svg>
+        </div>
+
         <div className="container-custom relative z-10 text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 fade-up-scroll">Our Services</h1>
           <p className="text-xl max-w-2xl fade-up-scroll">
@@ -80,73 +88,126 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-[#0F1C30]">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-[#F8F8FF] fade-up-scroll">Services We Offer</h2>
-            <p className="text-xl text-[#F8F8FF] fade-up-scroll">To Empower Your Business</p>
+      {/* Add curve end marker */}
+      <div className="curve-end-services"></div>
+
+      {/* Services We Provide Section */}
+      <section className="bg-[#FAFAFA] pt-20">
+        <div className="text-center mb-12 -mt-[66px]">
+          <h2 className="text-5xl md:text-6xl font-bold text-black fade-up-scroll">
+            SERVICES WE PROVIDE<span className="text-[#FFB300]">.</span>
+          </h2>
+        </div>
+        <div className="w-full max-w-none grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+          {/* Row 1: image, text, image, text */}
+          <div className="relative h-96 group overflow-hidden">
+            <Image src={services[0].image} alt={services[0].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-[#1B2A40] p-8 rounded-lg transition-all duration-300 hover:border-[#DA8637] hover:border fade-up-scroll"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="text-4xl mb-6">{service.icon}</div>
-                <h3 className="text-xl font-bold mb-4 text-[#F8F8FF]">{service.title}</h3>
-                <p className="text-[#F8F8FF]">{service.description}</p>
-              </div>
-            ))}
+          <div className="flex flex-col justify-center bg-[#2993D1] text-white p-8 h-96">
+            <h3 className="text-2xl font-bold mb-3">{services[0].title}</h3>
+            <p className="text-base mb-0">{services[0].description}</p>
+          </div>
+          <div className="relative h-96 group overflow-hidden">
+            <Image src={services[1].image} alt={services[1].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
+          </div>
+          <div className="flex flex-col justify-center bg-[#8B8CC7] text-white p-8 h-96">
+            <h3 className="text-2xl font-bold mb-3">{services[1].title}</h3>
+            <p className="text-base mb-0">{services[1].description}</p>
+          </div>
+          {/* Row 2: text, image, text, image */}
+          <div className="flex flex-col justify-center bg-[#36A9C5] text-white p-8 h-96">
+            <h3 className="text-2xl font-bold mb-3">{services[2].title}</h3>
+            <p className="text-base mb-0">{services[2].description}</p>
+          </div>
+          <div className="relative h-96 group overflow-hidden">
+            <Image src={services[2].image} alt={services[2].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
+          </div>
+          <div className="flex flex-col justify-center bg-[#DA8637] text-white p-8 h-96">
+            <h3 className="text-2xl font-bold mb-3">{services[3].title}</h3>
+            <p className="text-base mb-0">{services[3].description}</p>
+          </div>
+          <div className="relative h-96 group overflow-hidden">
+            <Image src={services[3].image} alt={services[3].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
+          </div>
+          {/* Row 3: image, text, image, text */}
+          <div className="relative h-96 group overflow-hidden">
+            <Image src={services[4].image} alt={services[4].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
+          </div>
+          <div className="flex flex-col justify-center bg-[#18B6A4] text-white p-8 h-96">
+            <h3 className="text-2xl font-bold mb-3">{services[4].title}</h3>
+            <p className="text-base mb-0">{services[4].description}</p>
+          </div>
+          <div className="relative h-96 group overflow-hidden">
+            <Image src={services[5].image} alt={services[5].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
+          </div>
+          <div className="flex flex-col justify-center bg-[#1B6AA8] text-white p-8 h-96">
+            <h3 className="text-2xl font-bold mb-3">{services[5].title}</h3>
+            <p className="text-base mb-0">{services[5].description}</p>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Our Services */}
-      <section className="relative py-20">
+      {/* Why Choose Innotelesoft Services Section */}
+      <section className="relative min-h-[700px] flex items-center overflow-hidden group py-24">
+        {/* Background Image */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-black/60" />
+          <Image
+            src="/images/services/partnership.jpg"
+            alt="Innotelesoft Partnerships"
+            fill
+            className="object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
+            priority
+          />
+          {/* Blended Dark Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-transparent" />
         </div>
-        <div className="container-custom relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 fade-up-scroll">
-              <span className="text-[#DA8637]">Why</span> <span className="text-[#F8F8FF]">Choose Our Services?</span>
-            </h2>
-            <p className="text-[#F8F8FF] max-w-2xl mx-auto fade-up-scroll">
-              We deliver excellence through innovation, reliability, and customer-centric approaches
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-black/30 backdrop-blur-sm p-8 rounded-lg hover:bg-black/50 hover:border-[#DA8637] hover:border transform hover:translate-y-[-4px] transition-all duration-300 fade-up-scroll"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="text-4xl mb-6 text-[#F8F8FF] group-hover:transform group-hover:scale-110 transition-transform duration-300">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-[#F8F8FF]">
-                  {feature.title}
-                </h3>
-                <p className="text-[#F8F8FF]">{feature.description}</p>
+        <div className="container-custom relative z-10">
+          <div className="max-w-3xl text-white">
+            <h2 className="text-4xl md:text-6xl font-bold mb-12 fade-up-scroll leading-tight">
+              Why Choose Innotelesoft Services<span className="text-[#FFB300]">?</span>
+            </h2>
+            
+            <div className="space-y-10 fade-up-scroll">
+              <div className="flex items-start gap-6">
+                <span className="mt-2 w-4 h-4 rounded-full bg-[#FFB300] aspect-square shrink-0"></span>
+                <p className="text-xl leading-relaxed">Proudly partnered with leading global OEM manufacturers, ensuring access to cutting-edge technology and reliable equipment for all your project needs.</p>
               </div>
-            ))}
+              
+              <div className="flex items-start gap-6">
+                <span className="mt-2 w-4 h-4 rounded-full bg-[#FFB300] aspect-square shrink-0"></span>
+                <p className="text-xl leading-relaxed">Direct partnerships enable us to offer competitive pricing, priority support, and authentic products with full manufacturer warranties.</p>
+              </div>
+              
+              <div className="flex items-start gap-6">
+                <span className="mt-2 w-4 h-4 rounded-full bg-[#FFB300] aspect-square shrink-0"></span>
+                <p className="text-xl leading-relaxed">Our certified team provides expert consultation, seamless integration, and comprehensive after-sales support for all OEM equipment.</p>
+              </div>
+              
+              <div className="flex items-start gap-6">
+                <span className="mt-2 w-4 h-4 rounded-full bg-[#FFB300] aspect-square shrink-0"></span>
+                <p className="text-xl leading-relaxed">Regular training and certification programs with our OEM partners ensure our team stays updated with the latest technologies and best practices.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-[#187777] text-[#D5DBED]">
+      <section className="py-24 bg-[#3398B3] text-white">
         <div className="container-custom text-center">
-          <h2 className="mega-title mb-12 fade-up-scroll">
+          <h2 className="mega-title mb-12 fade-up-scroll text-[#ffffff]">
             Ready to Transform Your Business?
           </h2>
           <Link
             href="/contact"
-            className="bg-[#DA8637] text-black rounded-md hover:bg-[#E5A05C] transition-all duration-300 cta-button fade-up-scroll"
+            className="bg-[#FFB300] text-black rounded-full hover:bg-[#E5A05C] transition-all duration-300 cta-button fade-up-scroll"
           >
             Get Started Today
           </Link>
