@@ -40,7 +40,7 @@ export default function About() {
 
       {/* What Drives Us Section */}
       <section className="bg-[#FAFAFA] pt-16 sm:pt-20">
-        <div className="text-center mb-12 sm:mb-16 -mt-[77px]">
+        <div className="text-center mb-12 sm:mb-16 -mt-[63px]">
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-black fade-up-scroll px-4 sm:px-0">
             WHAT WE DO<span className="text-[#FFB300]">.</span>
           </h2>
