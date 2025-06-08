@@ -22,7 +22,7 @@ export default function Home() {
       <Preloader onLoadingComplete={handleLoadingComplete} />
       
       {/* Hero Section */}
-      <section className="relative h-[80vh] sm:h-screen flex items-center justify-center">
+      <section className="relative h-[85vh] sm:h-screen flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <video
             ref={videoRef}
