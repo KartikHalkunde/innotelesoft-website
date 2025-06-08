@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { Poppins } from 'next/font/google'
-import Header from '../components/Header'
+import Header from './components/Header'
 import Footer from '../components/Footer'
 import Preloader from './components/Preloader'
 import DarkModeProvider from './components/DarkModeProvider'
