@@ -8,6 +8,23 @@
     --secondary: #ffffff;
     --accent: #FFB300;
   }
+
+  /* Responsive text sizes */
+  h1 {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl md:text-3xl font-bold;
+  }
+
+  p {
+    @apply text-base sm:text-lg leading-relaxed;
+  }
 }
 
 @layer components {
@@ -16,19 +33,19 @@
   }
   
   .container-custom {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
   }
 
   .btn-primary {
-    @apply px-6 py-2 bg-primary text-white rounded-md hover:opacity-90 transition-all duration-300;
+    @apply px-4 sm:px-6 py-2 bg-primary text-white rounded-md hover:opacity-90 transition-all duration-300 text-sm sm:text-base;
   }
 
   .service-card {
-    @apply p-6 rounded-lg glass-effect hover:border-accent hover:border-2 transition-all duration-300;
+    @apply p-4 sm:p-6 rounded-lg glass-effect hover:border-accent hover:border-2 transition-all duration-300;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-6 text-gray-900;
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-gray-900;
   }
 
   .fade-in {
@@ -51,11 +68,26 @@
   }
 
   .mega-title {
-    @apply text-5xl md:text-7xl font-bold;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold;
   }
 
   .cta-button {
-    @apply text-xl px-10 py-4 inline-block hover:scale-105;
+    @apply text-lg sm:text-xl px-6 sm:px-10 py-3 sm:py-4 inline-block hover:scale-105;
+  }
+
+  /* Responsive grid layouts */
+  .responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  /* Responsive spacing */
+  .section-spacing {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
+  }
+
+  /* Responsive padding */
+  .content-padding {
+    @apply p-4 sm:p-6 md:p-8;
   }
 }
 
@@ -76,5 +108,16 @@
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+/* Mobile-first responsive styles */
+@media (max-width: 640px) {
+  .container-custom {
+    @apply px-4;
+  }
+  
+  .mega-title {
+    @apply text-3xl;
   }
 } 

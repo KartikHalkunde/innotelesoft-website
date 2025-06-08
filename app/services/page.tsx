@@ -61,7 +61,7 @@ export default function Services() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center">
+      <section className="relative min-h-[400px] sm:h-[60vh] flex items-center">
         <div className="absolute inset-0">
           <Image
             src="/images/services-hero.jpg"
@@ -80,9 +80,9 @@ export default function Services() {
           </svg>
         </div>
 
-        <div className="container-custom relative z-10 text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 fade-up-scroll">Our Services</h1>
-          <p className="text-xl max-w-2xl fade-up-scroll">
+        <div className="container-custom relative z-10 text-white px-4 sm:px-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 fade-up-scroll">Our Services</h1>
+          <p className="text-lg sm:text-xl max-w-2xl fade-up-scroll">
             Comprehensive telecom and software solutions to power your business growth
           </p>
         </div>
@@ -92,69 +92,69 @@ export default function Services() {
       <div className="curve-end-services"></div>
 
       {/* Services We Provide Section */}
-      <section className="bg-[#FAFAFA] pt-20">
+      <section className="bg-[#FAFAFA] pt-16 sm:pt-20 overflow-x-hidden">
         <div className="text-center mb-12 -mt-[66px]">
-          <h2 className="text-5xl md:text-6xl font-bold text-black fade-up-scroll">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-black fade-up-scroll px-4 sm:px-0">
             SERVICES WE PROVIDE<span className="text-[#FFB300]">.</span>
           </h2>
         </div>
-        <div className="w-full max-w-none grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <div className="w-full max-w-none grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
           {/* Row 1: image, text, image, text */}
-          <div className="relative h-96 group overflow-hidden">
+          <div className="relative h-72 sm:h-96 group overflow-hidden">
             <Image src={services[0].image} alt={services[0].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
           </div>
-          <div className="flex flex-col justify-center bg-[#2993D1] text-white p-8 h-96">
-            <h3 className="text-2xl font-bold mb-3">{services[0].title}</h3>
-            <p className="text-base mb-0">{services[0].description}</p>
+          <div className="flex flex-col justify-center bg-[#2993D1] text-white p-6 sm:p-8 min-h-[300px] sm:h-96">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3">{services[0].title}</h3>
+            <p className="text-sm sm:text-base mb-0">{services[0].description}</p>
           </div>
-          <div className="relative h-96 group overflow-hidden">
+          <div className="relative h-72 sm:h-96 group overflow-hidden">
             <Image src={services[1].image} alt={services[1].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
           </div>
-          <div className="flex flex-col justify-center bg-[#8B8CC7] text-white p-8 h-96">
-            <h3 className="text-2xl font-bold mb-3">{services[1].title}</h3>
-            <p className="text-base mb-0">{services[1].description}</p>
+          <div className="flex flex-col justify-center bg-[#8B8CC7] text-white p-6 sm:p-8 min-h-[300px] sm:h-96">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3">{services[1].title}</h3>
+            <p className="text-sm sm:text-base mb-0">{services[1].description}</p>
           </div>
           {/* Row 2: text, image, text, image */}
-          <div className="flex flex-col justify-center bg-[#36A9C5] text-white p-8 h-96">
-            <h3 className="text-2xl font-bold mb-3">{services[2].title}</h3>
-            <p className="text-base mb-0">{services[2].description}</p>
+          <div className="flex flex-col justify-center bg-[#36A9C5] text-white p-6 sm:p-8 min-h-[300px] sm:h-96">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3">{services[2].title}</h3>
+            <p className="text-sm sm:text-base mb-0">{services[2].description}</p>
           </div>
-          <div className="relative h-96 group overflow-hidden">
+          <div className="relative h-72 sm:h-96 group overflow-hidden">
             <Image src={services[2].image} alt={services[2].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
           </div>
-          <div className="flex flex-col justify-center bg-[#DA8637] text-white p-8 h-96">
-            <h3 className="text-2xl font-bold mb-3">{services[3].title}</h3>
-            <p className="text-base mb-0">{services[3].description}</p>
+          <div className="flex flex-col justify-center bg-[#DA8637] text-white p-6 sm:p-8 min-h-[300px] sm:h-96">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3">{services[3].title}</h3>
+            <p className="text-sm sm:text-base mb-0">{services[3].description}</p>
           </div>
-          <div className="relative h-96 group overflow-hidden">
+          <div className="relative h-72 sm:h-96 group overflow-hidden">
             <Image src={services[3].image} alt={services[3].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
           </div>
           {/* Row 3: image, text, image, text */}
-          <div className="relative h-96 group overflow-hidden">
+          <div className="relative h-72 sm:h-96 group overflow-hidden">
             <Image src={services[4].image} alt={services[4].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
           </div>
-          <div className="flex flex-col justify-center bg-[#18B6A4] text-white p-8 h-96">
-            <h3 className="text-2xl font-bold mb-3">{services[4].title}</h3>
-            <p className="text-base mb-0">{services[4].description}</p>
+          <div className="flex flex-col justify-center bg-[#18B6A4] text-white p-6 sm:p-8 min-h-[300px] sm:h-96">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3">{services[4].title}</h3>
+            <p className="text-sm sm:text-base mb-0">{services[4].description}</p>
           </div>
-          <div className="relative h-96 group overflow-hidden">
+          <div className="relative h-72 sm:h-96 group overflow-hidden">
             <Image src={services[5].image} alt={services[5].title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
           </div>
-          <div className="flex flex-col justify-center bg-[#1B6AA8] text-white p-8 h-96">
-            <h3 className="text-2xl font-bold mb-3">{services[5].title}</h3>
-            <p className="text-base mb-0">{services[5].description}</p>
+          <div className="flex flex-col justify-center bg-[#1B6AA8] text-white p-6 sm:p-8 min-h-[300px] sm:h-96">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3">{services[5].title}</h3>
+            <p className="text-sm sm:text-base mb-0">{services[5].description}</p>
           </div>
         </div>
       </section>
 
       {/* Why Choose Innotelesoft Services Section */}
-      <section className="relative min-h-[700px] flex items-center overflow-hidden group py-24">
+      <section className="relative min-h-[600px] sm:min-h-[700px] flex items-center overflow-hidden group py-16 sm:py-24">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -169,30 +169,30 @@ export default function Services() {
         </div>
 
         <div className="container-custom relative z-10">
-          <div className="max-w-3xl text-white">
-            <h2 className="text-4xl md:text-6xl font-bold mb-12 fade-up-scroll leading-tight">
+          <div className="max-w-3xl text-white px-4 sm:px-6">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-8 sm:mb-12 fade-up-scroll leading-tight">
               Why Choose Innotelesoft Services<span className="text-[#FFB300]">?</span>
             </h2>
             
-            <div className="space-y-10 fade-up-scroll">
-              <div className="flex items-start gap-6">
-                <span className="mt-2 w-4 h-4 rounded-full bg-[#FFB300] aspect-square shrink-0"></span>
-                <p className="text-xl leading-relaxed">Proudly partnered with leading global OEM manufacturers, ensuring access to cutting-edge technology and reliable equipment for all your project needs.</p>
+            <div className="space-y-6 sm:space-y-10 fade-up-scroll">
+              <div className="flex items-start gap-4 sm:gap-6">
+                <span className="mt-2 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-[#FFB300] aspect-square shrink-0"></span>
+                <p className="text-base sm:text-xl leading-relaxed">Proudly partnered with leading global OEM manufacturers, ensuring access to cutting-edge technology and reliable equipment for all your project needs.</p>
               </div>
               
-              <div className="flex items-start gap-6">
-                <span className="mt-2 w-4 h-4 rounded-full bg-[#FFB300] aspect-square shrink-0"></span>
-                <p className="text-xl leading-relaxed">Direct partnerships enable us to offer competitive pricing, priority support, and authentic products with full manufacturer warranties.</p>
+              <div className="flex items-start gap-4 sm:gap-6">
+                <span className="mt-2 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-[#FFB300] aspect-square shrink-0"></span>
+                <p className="text-base sm:text-xl leading-relaxed">Direct partnerships enable us to offer competitive pricing, priority support, and authentic products with full manufacturer warranties.</p>
               </div>
               
-              <div className="flex items-start gap-6">
-                <span className="mt-2 w-4 h-4 rounded-full bg-[#FFB300] aspect-square shrink-0"></span>
-                <p className="text-xl leading-relaxed">Our certified team provides expert consultation, seamless integration, and comprehensive after-sales support for all OEM equipment.</p>
+              <div className="flex items-start gap-4 sm:gap-6">
+                <span className="mt-2 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-[#FFB300] aspect-square shrink-0"></span>
+                <p className="text-base sm:text-xl leading-relaxed">Our certified team provides expert consultation, seamless integration, and comprehensive after-sales support for all OEM equipment.</p>
               </div>
               
-              <div className="flex items-start gap-6">
-                <span className="mt-2 w-4 h-4 rounded-full bg-[#FFB300] aspect-square shrink-0"></span>
-                <p className="text-xl leading-relaxed">Regular training and certification programs with our OEM partners ensure our team stays updated with the latest technologies and best practices.</p>
+              <div className="flex items-start gap-4 sm:gap-6">
+                <span className="mt-2 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-[#FFB300] aspect-square shrink-0"></span>
+                <p className="text-base sm:text-xl leading-relaxed">Regular training and certification programs with our OEM partners ensure our team stays updated with the latest technologies and best practices.</p>
               </div>
             </div>
           </div>
@@ -200,14 +200,14 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-[#3398B3] text-white">
-        <div className="container-custom text-center">
-          <h2 className="mega-title mb-12 fade-up-scroll text-[#ffffff]">
+      <section className="section-spacing bg-[#3398B3] text-white">
+        <div className="container-custom text-center px-4 sm:px-6">
+          <h2 className="mega-title mb-8 sm:mb-12 fade-up-scroll text-[#ffffff]">
             Ready to Transform Your Business?
           </h2>
           <Link
             href="/contact"
-            className="bg-[#FFB300] text-black rounded-full hover:bg-[#E5A05C] transition-all duration-300 cta-button fade-up-scroll"
+            className="bg-[#FFB300] text-black rounded-full hover:bg-[#E5A05C] transition-all duration-300 cta-button fade-up-scroll w-full sm:w-auto"
           >
             Get Started Today
           </Link>
