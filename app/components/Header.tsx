@@ -93,37 +93,48 @@ export default function Header() {
       >
         <div className="flex flex-col h-full pt-20 pb-6 px-6">
           <nav className="flex-1">
-            <div className="space-y-6">
+            <div className="space-y-10">
               <Link
                 href="/"
-                className="block text-lg text-white hover:text-[#FFB300] transition-colors"
+                className="block text-xl text-white hover:text-[#FFB300] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className="block text-lg text-white hover:text-[#FFB300] transition-colors"
+                className="block text-xl text-white hover:text-[#FFB300] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
               </Link>
               <Link
                 href="/services"
-                className="block text-lg text-white hover:text-[#FFB300] transition-colors"
+                className="block text-xl text-white hover:text-[#FFB300] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </Link>
               <Link
                 href="/contact"
-                className="block text-lg text-white hover:text-[#FFB300] transition-colors"
+                className="block text-xl text-white hover:text-[#FFB300] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact Us
               </Link>
             </div>
           </nav>
+
+          {/* Logo at bottom */}
+          <div className="mt-auto pt-6">
+            <Link 
+              href="/" 
+              className="block text-2xl font-bold text-white hover:text-[#FFB300] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Innotelesoft
+            </Link>
+          </div>
         </div>
       </aside>
 

@@ -40,7 +40,7 @@ export default function Home() {
         <CurveSection showScrollButton={true} />
 
         <div className="container-custom relative z-10 text-center px-4 sm:px-6">
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-6 sm:mb-8 fade-up-scroll">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-4 sm:mb-6 md:mb-8 fade-up-scroll leading-tight sm:leading-normal">
             <span className="relative inline-block">
               Innovative
               <span className={`absolute -bottom-2 left-0 w-full h-1 bg-[#FFB300] rounded-full ${!isLoading ? 'animate-underline' : 'opacity-0'}`}></span>
@@ -50,13 +50,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center fade-up-scroll">
             <Link 
               href="/services" 
-              className="w-full sm:w-auto px-6 sm:px-8 py-3 border-2 border-white text-white rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300 hover:scale-105 text-base sm:text-lg"
+              className="w-[200px] sm:w-auto px-5 sm:px-8 py-2.5 sm:py-3 border-2 border-white text-white rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300 hover:scale-105 text-sm sm:text-lg"
             >
               Explore Services
             </Link>
             <Link 
               href="/contact" 
-              className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-[#FFB300] text-gray-900 rounded-full hover:bg-[#E0A800] transition-all duration-300 hover:scale-105 text-base sm:text-lg"
+              className="w-[200px] sm:w-auto px-5 sm:px-8 py-2.5 sm:py-3 bg-[#FFB300] text-gray-900 rounded-full hover:bg-[#E0A800] transition-all duration-300 hover:scale-105 text-sm sm:text-lg"
             >
               Get in Touch
             </Link>
