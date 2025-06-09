@@ -43,7 +43,7 @@ export default function Home() {
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-4 sm:mb-6 md:mb-8 fade-up-scroll leading-tight sm:leading-normal">
             <span className="relative inline-block">
               Innovative
-              <span className={`absolute -bottom-2 left-0 w-full h-1 bg-[#FFB300] rounded-full ${!isLoading ? 'animate-underline' : 'opacity-0'}`}></span>
+              <span className={`absolute -bottom-2 left-0 w-full h-1 bg-[#FFB300] rounded-full hidden sm:block ${!isLoading ? 'animate-underline' : 'opacity-0'}`}></span>
             </span>
             {" "}Telecom & Software Solutions
           </h1>
