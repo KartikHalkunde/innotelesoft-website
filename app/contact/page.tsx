@@ -1,9 +1,34 @@
 'use client'
 
 import { useScrollAnimation } from '../../hooks/useScrollAnimation'
+import { useState } from 'react'
 
 export default function Contact() {
   useScrollAnimation()
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      
+      if (response.ok) {
+        setIsSubmitted(true)
+        form.reset()
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+    }
+  }
 
   return (
     <section className="min-h-screen bg-[#F9F5EC] pt-24 sm:pt-32 pb-16 sm:pb-20">
@@ -23,86 +48,83 @@ export default function Contact() {
           </h2>
         </div>
 
-        <form className="space-y-4 sm:space-y-6 max-w-2xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+        {isSubmitted ? (
+          <div className="text-center p-6 bg-green-50 rounded-lg fade-up-scroll">
+            <h3 className="text-xl font-semibold text-green-800 mb-2">Thank you for your message!</h3>
+            <p className="text-green-600">We'll get back to you as soon as possible.</p>
+          </div>
+        ) : (
+          <form 
+            action="https://formspree.io/f/mkgbbvvn"
+            method="POST"
+            onSubmit={handleSubmit}
+            className="space-y-6 max-w-2xl mx-auto"
+          >
             <div className="fade-up-scroll">
+              <label htmlFor="fullName" className="block text-sm font-medium text-[#0F1C30] mb-2">
+                Full Name
+              </label>
               <input
+                id="fullName"
+                name="fullName"
                 type="text"
-                placeholder="First Name"
-                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#DA8637] focus:border-transparent transition-all duration-300 bg-white"
+                placeholder="Enter your full name"
+                className="w-full px-4 py-3 text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#DA8637] focus:border-transparent transition-all duration-300 bg-white"
                 required
               />
             </div>
+
             <div className="fade-up-scroll">
+              <label htmlFor="email" className="block text-sm font-medium text-[#0F1C30] mb-2">
+                Email Address
+              </label>
               <input
-                type="text"
-                placeholder="Last Name"
-                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#DA8637] focus:border-transparent transition-all duration-300 bg-white"
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter your email address"
+                className="w-full px-4 py-3 text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#DA8637] focus:border-transparent transition-all duration-300 bg-white"
                 required
               />
             </div>
-          </div>
 
-          <div className="fade-up-scroll">
-            <input
-              type="email"
-              placeholder="Work Email"
-              className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#DA8637] focus:border-transparent transition-all duration-300 bg-white"
-              required
-            />
-          </div>
+            <div className="fade-up-scroll">
+              <label htmlFor="phone" className="block text-sm font-medium text-[#0F1C30] mb-2">
+                Phone Number (Optional)
+              </label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="Enter your phone number"
+                className="w-full px-4 py-3 text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#DA8637] focus:border-transparent transition-all duration-300 bg-white"
+              />
+            </div>
 
-          <div className="fade-up-scroll">
-            <input
-              type="text"
-              placeholder="Job Title"
-              className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#DA8637] focus:border-transparent transition-all duration-300 bg-white"
-              required
-            />
-          </div>
+            <div className="fade-up-scroll">
+              <label htmlFor="message" className="block text-sm font-medium text-[#0F1C30] mb-2">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                placeholder="How can we help you?"
+                className="w-full px-4 py-3 text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#DA8637] focus:border-transparent transition-all duration-300 bg-white"
+                required
+              />
+            </div>
 
-          <div className="fade-up-scroll">
-            <input
-              type="text"
-              placeholder="Company"
-              className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#DA8637] focus:border-transparent transition-all duration-300 bg-white"
-              required
-            />
-          </div>
-
-          <div className="fade-up-scroll">
-            <select
-              className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#DA8637] focus:border-transparent transition-all duration-300 bg-white"
-              required
-            >
-              <option value="">Country</option>
-              <option value="IN">India</option>
-              <option value="US">United States</option>
-              <option value="UK">United Kingdom</option>
-              <option value="CA">Canada</option>
-              <option value="AU">Australia</option>
-              {/* Add more countries as needed */}
-            </select>
-          </div>
-
-          <div className="fade-up-scroll">
-            <textarea
-              placeholder="Message"
-              rows={4}
-              className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#DA8637] focus:border-transparent transition-all duration-300 bg-white"
-              required
-            />
-          </div>
-
-          <div className="text-center fade-up-scroll pt-2 sm:pt-4">
-            <button
-              type="submit"
-              className="w-full sm:w-auto px-8 sm:px-12 py-3 sm:py-4 bg-[#0F1C30] text-white rounded-full hover:bg-[#0F1C30]/90 transition-all duration-300 text-base sm:text-lg font-medium"
-            >
-              Submit
-            </button>
-          </div>
-        </form>
+            <div className="text-center fade-up-scroll pt-4">
+              <button
+                type="submit"
+                className="w-full sm:w-auto px-8 sm:px-12 py-3 sm:py-4 bg-[#0F1C30] text-white rounded-full hover:bg-[#0F1C30]/90 transition-all duration-300 text-base sm:text-lg font-medium"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+        )}
       </div>
     </section>
   )
