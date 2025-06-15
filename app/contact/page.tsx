@@ -11,11 +11,13 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
+    console.log('Form submission started')
     
     const form = e.currentTarget
     const formData = new FormData(form)
     
     try {
+      console.log('Sending request to Formspree')
       const response = await fetch('https://formspree.io/f/mkgbbvvn', {
         method: 'POST',
         body: formData,
@@ -24,11 +26,13 @@ export default function Contact() {
         }
       })
       
+      console.log('Response received:', response.status)
       if (response.ok) {
+        console.log('Form submitted successfully')
         setIsSubmitted(true)
         form.reset()
       } else {
-        console.error('Form submission failed')
+        console.error('Form submission failed with status:', response.status)
       }
     } catch (error) {
       console.error('Error submitting form:', error)
@@ -144,7 +148,7 @@ export default function Contact() {
             </form>
           </>
         ) : (
-          <div className="text-center p-8 bg-white rounded-lg shadow-lg fade-up-scroll max-w-2xl mx-auto">
+          <div className="text-center p-8 bg-white rounded-lg shadow-lg fade-up-scroll max-w-2xl mx-auto mt-12">
             <h3 className="text-2xl font-bold text-[#0F1C30] mb-4">Thank you for your message!</h3>
             <p className="text-lg text-[#0F1C30]/80">Innotelesoft will contact you shortly.</p>
           </div>
