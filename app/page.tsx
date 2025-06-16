@@ -41,11 +41,7 @@ export default function Home() {
 
         <div className="container-custom relative z-10 text-center px-4 sm:px-6">
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-4 sm:mb-6 md:mb-8 fade-up-scroll leading-tight sm:leading-normal">
-            <span className="relative inline-block">
-              Innovative
-              <span className={`absolute -bottom-2 left-0 w-full h-1 bg-[#FFB300] rounded-full hidden sm:block ${!isLoading ? 'animate-underline' : 'opacity-0'}`}></span>
-            </span>
-            {" "}Telecom & Software Solutions
+            Innovative{" "}Telecom & Software Solutions
           </h1>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center fade-up-scroll">
             <Link 
