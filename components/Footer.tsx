@@ -32,8 +32,8 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="text-center md:text-right">
-            <a href="mailto:innotelesoft@gmail.com" className="text-white/80 hover:text-[#FFB300] transition-colors block md:inline-block">
-              innotelesoft@gmail.com
+            <a href="mailto:contact@innotelesoft.com" className="text-white/80 hover:text-[#FFB300] transition-colors block md:inline-block">
+              contact@innotelesoft.com
             </a>
           </div>
         </div>
