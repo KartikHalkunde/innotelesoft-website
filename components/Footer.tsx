@@ -13,7 +13,7 @@ const Footer = () => {
               Innotelesoft
             </Link>
             <p className="text-sm text-white/70 mt-2">
-              © {currentYear} Innotelesoft. All rights reserved.
+              © {currentYear} Innotelesoft Pvt Ltd.
             </p>
           </div>
 
@@ -32,8 +32,11 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="text-center md:text-right">
-            <a href="mailto:contact@innotelesoft.com" className="text-white/80 hover:text-[#FFB300] transition-colors block md:inline-block">
+            <a href="mailto:contact@innotelesoft.com" className="text-white/80 hover:text-[#FFB300] transition-colors block">
               contact@innotelesoft.com
+            </a>
+            <a href="tel:+919137576874" className="text-white/80 hover:text-[#FFB300] transition-colors block mt-1">
+              +91 91375 76874
             </a>
           </div>
         </div>
